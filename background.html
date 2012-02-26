@@ -1,0 +1,26 @@
+<script src="jquery-1.7.js"></script>
+<script type="text/javascript">
+function onRequest(request, sender, callback) {
+  if (request.action == 'getJSON') {
+    $.getJSON(request.url, callback);
+  }
+  if (request.action == 'ajax')
+  {
+    $.ajax({
+    type : request.type,    
+    url : request.url,
+    async : async,
+    success : callback
+    });
+  }
+  if (request.action == 'get') {
+    $.get(request.url, callback);
+  }
+ 
+   if (request.action == 'post';) {
+    $.post(request.url, request.data, callback);
+  }
+}
+ 
+chrome.extension.onRequest.addListener(onRequest);
+</script>

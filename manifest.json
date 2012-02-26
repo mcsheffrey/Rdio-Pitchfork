@@ -1,0 +1,27 @@
+{
+  "name": "Pitchfork rdio",
+  "version": "1.0",
+  "permissions": [
+      "http://pipes.yahoo.com/*",
+      "https://pipes.yahoo.com/*",
+      "http://pitchfork.com/*",
+      "https://pitchfork.com/*",
+      "http://pipes.yahoo.com/*",
+      "https://pipes.yahoo.com/*",
+      "http://*yahoo.com/*",
+      "https://*yahoo.com/*",
+      "http://query.yahooapis.com/*",
+      "https://query.yahooapis.com/*",
+      "http://search.twitter.com/*"
+    ],
+  "content_scripts": [ {
+      "all_frames": false,
+      "js": [
+        "jquery-1.7.min.js",
+        "rdio-pitchfork.js"
+      ],
+      "matches": [ "http://www.rdio.com/*" ],
+      "run_at": "document_end"
+   } ],
+  "background_page": "background.html"
+}
